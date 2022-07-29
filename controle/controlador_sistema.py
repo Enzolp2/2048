@@ -9,3 +9,6 @@ class ControladorSistema:
     def iniciar_game(self):
         pass
 
+    def iniciar(self):
+        self.__controlador_login.abre_tela_inicial()
+

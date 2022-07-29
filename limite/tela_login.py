@@ -13,7 +13,7 @@ class TelaLogin:
         print("2 -> Criar Conta")
         print("0 -> Sair")
 
-        return str(input("Escolha a opção: "))
+        return int(input("Escolha a opção: "))
 
     def tela_opcoes_usuario(self):
         print("-------- USUÁRIOS ----------")
@@ -24,4 +24,7 @@ class TelaLogin:
         print("4 - Excluir Usuário")
         print("0 - Retornar")
 
-        return str(input("Escolha a opção: "))
+        return int(input("Escolha a opção: "))
+
+    def pede_usuario(self):
+        return str(input("Usuário: "))
