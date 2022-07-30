@@ -6,9 +6,11 @@ class ControladorSistema:
         self.__controlador_login = ControladorLogin(self)
         self.__controlador_game = ControladorGame(self)
 
-    def iniciar_game(self):
-        pass
+    def iniciar_game(self, usuario):
+        self.__controlador_game.inicializar_game(usuario)
 
     def iniciar(self):
         self.__controlador_login.abre_tela_inicial()
 
+    def encerra_sistema(self):
+        exit(0)

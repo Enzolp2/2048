@@ -11,7 +11,7 @@ class ControladorLogin:
         typed = self.__tela_login.tela_login()
         if typed["usuario"] in self.__logins:
             if self.__logins[typed["usuario"]] == typed["senha"]:
-                self.__controlador_sistema.iniciar_game()
+                self.__controlador_sistema.iniciar_game(typed["usuario"])
 
     def criar_conta(self):
         opcao = self.__tela_login.tela_opcoes_usuario()
@@ -57,11 +57,12 @@ class ControladorLogin:
 
 
     def excluir_usuario(self):
-        usuario = self.__tela_login.pede_usuario()
-        if usuario in self.__logins:
-            self.__logins.pop(usuario)
-            print("Usuário excluído.")
-            self.abre_tela_inicial()
+        usuario = self.__tela_login.tela_login()
+        if usuario["usuario"] in self.__logins:
+            if usuario["senha"] == self.__logins[usuario["usuario"]]:
+                self.__logins.pop(usuario["usuario"])
+                print("Usuário excluído.")
+                self.abre_tela_inicial()
         else:
             print('Usuário não encontrado.')
             self.criar_conta()
@@ -69,10 +70,7 @@ class ControladorLogin:
     def abre_tela_inicial(self):
         opcao = self.__tela_login.tela_opcoes_login()
         lista_op = {1: self.realiza_login, 2: self.criar_conta,
-                    0: self.encerra_sistema}
+                    0: self.__controlador_sistema.encerra_sistema}
         while True:
             lista_op[opcao]()
-
-    def encerra_sistema(self):
-        exit(0)
 

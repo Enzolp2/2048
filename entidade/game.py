@@ -2,9 +2,12 @@
 
 class Game:
     def __init__(self):
-        self.__matriz = [[0, 0, 0, 0],
-                         [0, 0, 0, 0],
-                         [0, 0, 0, 0],
-                         [0, 0, 0, 0]]
-        self.__up_key, self.__down_key, self.__left_key, self.__right_key = False, False, False, False
         self.__running = False
+
+    @property
+    def running(self):
+        return self.__running
+
+    @running.setter
+    def running(self, running):
+        self.__running = running
