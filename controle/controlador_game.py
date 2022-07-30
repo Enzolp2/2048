@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 from limite.tela_game import TelaGame
 from entidade.game import Game
 import random
+
 
 class ControladorGame:
     def __init__(self, controlador_sistema):
@@ -161,15 +161,5 @@ class ControladorGame:
             print(self.__matriz[i])
 
     def ranking(self):
-        pass
-=======
-
-
-class ControladorGame:
-
-    def __init__(self, controlador_sistema):
-        self.__controlador_sistema = controlador_sistema
-
-    def inicializar_game(self):
-        pass
->>>>>>> 8a18778d75953f0dcd8d7eabf1b2d715bf9bec6b
+        print("EM DESENVOLVIMENTO")
+        self.__controlador_sistema.encerra_sistema()
